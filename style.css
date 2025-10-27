@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif; /* Revert to original font */
     margin: 0;
     background-color: #1a1a1a; /* Dark background */
     color: #f0f0f0; /* Light text */
@@ -10,11 +10,11 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%); /* Vibrant gradient */
-    border-bottom: none; /* Remove border for a cleaner look */
+    background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%); /* Revert to vibrant gradient */
+    border-bottom: none;
     position: relative; /* Needed for absolute positioning of moving elements */
     overflow: hidden; /* Hide elements outside the header */
-    border-radius: 0 0 25px 25px; /* Rounded bottom corners */
+    border-radius: 0 0 25px 25px; /* Revert rounded bottom corners */
 }
 
 .logo-name {
@@ -31,7 +31,9 @@ header {
 .logo-name h1 {
     margin: 0;
     font-size: 1.8em;
-    color: #ffffff; /* White color for better contrast */
+    color: #ffffff; /* Brighter white color for better contrast */
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.9), 0 0 25px rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
 }
 
 .dots {
@@ -244,17 +246,17 @@ footer a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none; /* Allow interaction with elements below */
+    pointer-events: none;
     z-index: 0;
 }
 
 .element {
     position: absolute;
-    background-color: rgba(255, 255, 255, 0.8); /* Solid white, slightly transparent */
+    background-color: rgba(255, 255, 255, 0.8);
     border-radius: 50%;
     opacity: 0;
     animation: moveElements linear infinite;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6); /* More prominent glow */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
 }
 
 .element-1 {
@@ -314,7 +316,7 @@ footer a:hover {
         opacity: 1;
     }
     100% {
-        transform: translateY(calc(100% - 50px)) translateX(calc(100% - 50px)) scale(1.5); /* Changed vh/vw to % */
+        transform: translateY(calc(100% - 50px)) translateX(calc(100% - 50px)) scale(1.5);
         opacity: 0;
     }
 }
