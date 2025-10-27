@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const searchTerm = e.target.value.toLowerCase();
             Array.from(featureItemsContainer.children).forEach(item => {
                 const itemText = item.textContent.toLowerCase();
-                if (itemText.includes(searchTerm)) {
+                if (searchTerm === '' || itemText.includes(searchTerm)) {
                     item.style.display = 'block';
                 } else {
                     item.style.display = 'none';
