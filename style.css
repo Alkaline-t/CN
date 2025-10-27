@@ -10,8 +10,8 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background: #1a1a1a; /* Solid background matching body */
-    border-bottom: none;
+    background: #222222; /* Slightly different dark background */
+    border-bottom: 1px solid #333333; /* Subtle bottom border */
     position: relative; /* Needed for absolute positioning of moving elements */
     overflow: hidden; /* Hide elements outside the header */
     border-radius: 0; /* Remove rounded corners */
