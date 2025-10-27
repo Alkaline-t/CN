@@ -70,4 +70,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     startTypingAnimation();
+
+    // Roadmap page search functionality
+    const roadmapSearch = document.getElementById('roadmap-search');
+    const careerCardsContainer = document.querySelector('.career-cards-container');
+
+    if (roadmapSearch && careerCardsContainer) {
+        roadmapSearch.addEventListener('keyup', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            Array.from(careerCardsContainer.children).forEach(card => {
+                const cardText = card.textContent.toLowerCase();
+                if (cardText.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    }
 });
