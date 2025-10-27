@@ -88,4 +88,22 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // Home page search functionality
+    const homeSearch = document.getElementById('home-search');
+    const featureItemsContainer = document.querySelector('.features');
+
+    if (homeSearch && featureItemsContainer) {
+        homeSearch.addEventListener('keyup', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            Array.from(featureItemsContainer.children).forEach(item => {
+                const itemText = item.textContent.toLowerCase();
+                if (itemText.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    }
 });
