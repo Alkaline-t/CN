@@ -26,6 +26,7 @@ header {
     height: 60px; /* Adjust logo size */
     margin-right: 10px;
     border-radius: 50%; /* If logo is round */
+    filter: brightness(2.5); /* Increase brightness significantly to match brand text */
 }
 
 .logo-name h1 {
