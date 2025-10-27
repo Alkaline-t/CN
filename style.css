@@ -1,8 +1,39 @@
+:root {
+    --bg-color: #1a1a1a;
+    --text-color: #f0f0f0;
+    --header-bg: #222222;
+    --header-border: #333333;
+    --feature-bg: #282828;
+    --feature-shadow: rgba(0, 0, 0, 0.2);
+    --popup-bg: #1a1a1a;
+    --popup-border: #555;
+    --link-color: #007bff;
+    --link-hover-color: #0056b3;
+    --copyright-color: #aaa;
+    --title-color: #007bff;
+}
+
+[data-theme="light"] {
+    --bg-color: #f0f0f0;
+    --text-color: #1a1a1a;
+    --header-bg: #cccccc;
+    --header-border: #bbbbbb;
+    --feature-bg: #ffffff;
+    --feature-shadow: rgba(0, 0, 0, 0.1);
+    --popup-bg: #ffffff;
+    --popup-border: #cccccc;
+    --link-color: #0056b3;
+    --link-hover-color: #007bff;
+    --copyright-color: #555;
+    --title-color: #0056b3;
+}
+
 body {
-    font-family: Arial, sans-serif; /* Revert to original font */
+    font-family: Arial, sans-serif;
     margin: 0;
-    background-color: #1a1a1a; /* Dark background */
-    color: #f0f0f0; /* Light text */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 header {
@@ -10,11 +41,12 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background: #222222; /* Slightly different dark background */
-    border-bottom: 1px solid #333333; /* Subtle bottom border */
-    position: relative; /* Needed for absolute positioning of moving elements */
-    overflow: hidden; /* Hide elements outside the header */
-    border-radius: 0; /* Remove rounded corners */
+    background: var(--header-bg);
+    border-bottom: 1px solid var(--header-border);
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
 .logo-name {
@@ -32,7 +64,7 @@ header {
 .logo-name h1 {
     margin: 0;
     font-size: 1.8em;
-    color: #ffffff; /* Brighter white color for better contrast */
+    color: var(--text-color); /* Use text-color for brand text */
     text-shadow: 0 0 15px rgba(255, 255, 255, 0.9), 0 0 25px rgba(255, 255, 255, 0.7);
 }
 
@@ -63,7 +95,7 @@ main {
 .tagline {
     font-size: 2.5em;
     font-weight: bold;
-    color: #007bff;
+    color: var(--title-color);
     margin-bottom: 15px;
     height: 1.2em; /* To prevent layout shift during typing animation */
 }
@@ -71,7 +103,7 @@ main {
 .roadmap-tagline {
     font-size: 2.5em;
     font-weight: bold;
-    color: #007bff;
+    color: var(--title-color);
     margin-bottom: 30px;
 }
 
@@ -89,10 +121,10 @@ main {
     width: 60%;
     max-width: 500px;
     padding: 12px 20px;
-    border: 1px solid #555;
+    border: 1px solid var(--popup-border);
     border-radius: 25px;
-    background-color: #282828;
-    color: #f0f0f0;
+    background-color: var(--feature-bg);
+    color: var(--text-color);
     font-size: 1em;
     outline: none;
 }
@@ -102,7 +134,7 @@ main {
 }
 
 #home-search-button {
-    background-color: #007bff;
+    background-color: var(--link-color);
     color: white;
     border: none;
     border-radius: 25px;
@@ -114,17 +146,17 @@ main {
 }
 
 #home-search-button:hover {
-    background-color: #0056b3;
+    background-color: var(--link-hover-color);
 }
 
 #roadmap-search {
     width: 60%;
     max-width: 500px;
     padding: 12px 20px;
-    border: 1px solid #555;
+    border: 1px solid var(--popup-border);
     border-radius: 25px;
-    background-color: #282828;
-    color: #f0f0f0;
+    background-color: var(--feature-bg);
+    color: var(--text-color);
     font-size: 1em;
     outline: none;
 }
@@ -134,7 +166,7 @@ main {
 }
 
 #search-button {
-    background-color: #007bff;
+    background-color: var(--link-color);
     color: white;
     border: none;
     border-radius: 25px;
@@ -146,13 +178,13 @@ main {
 }
 
 #search-button:hover {
-    background-color: #0056b3;
+    background-color: var(--link-hover-color);
 }
 
 .description {
     font-size: 1.2em;
     line-height: 1.8;
-    color: #f0f0f0;
+    color: var(--text-color);
     max-width: 700px;
     margin: 0 auto 30px auto;
     min-height: 3.6em; /* To prevent layout shift during typing animation */
@@ -165,11 +197,11 @@ main {
 }
 
 .feature-item {
-    background-color: #282828;
+    background-color: var(--feature-bg);
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px var(--feature-shadow);
+    transition: transform 0.3s ease, background-color 0.3s, box-shadow 0.3s;
 }
 
 .feature-item:hover {
@@ -177,7 +209,7 @@ main {
 }
 
 .feature-item h3 {
-    color: #007bff;
+    color: var(--title-color);
     margin-top: 0;
     font-size: 1.5em;
 }
@@ -185,12 +217,13 @@ main {
 .feature-item p {
     font-size: 0.95em;
     line-height: 1.6;
+    color: var(--text-color);
 }
 
 .feature-item a p {
     font-size: 0.95em;
     line-height: 1.6;
-    color: #f0f0f0; /* Light text color for better visibility */
+    color: var(--text-color); /* Light text color for better visibility */
     text-decoration: none;
 }
 
@@ -201,11 +234,11 @@ main {
 }
 
 .career-card {
-    background-color: #282828;
+    background-color: var(--feature-bg);
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px var(--feature-shadow);
+    transition: transform 0.3s ease, background-color 0.3s, box-shadow 0.3s;
 }
 
 .career-card:hover {
@@ -213,7 +246,7 @@ main {
 }
 
 .career-card h3 {
-    color: #007bff;
+    color: var(--title-color);
     margin-top: 0;
     font-size: 1.5em;
 }
@@ -221,24 +254,27 @@ main {
 .career-card p {
     font-size: 0.95em;
     line-height: 1.6;
+    color: var(--text-color);
 }
 
 footer {
-    background-color: #282828;
+    background-color: var(--header-bg);
     padding: 20px;
     text-align: center;
-    border-top: 1px solid #3a3a3a;
+    border-top: 1px solid var(--header-border);
     margin-top: 40px;
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
 footer a {
-    color: #007bff;
+    color: var(--link-color);
     text-decoration: none;
     margin: 0 10px;
 }
 
 footer a:hover {
     text-decoration: underline;
+    color: var(--link-hover-color);
 }
 
 .about-section {
@@ -254,7 +290,7 @@ footer a:hover {
 
 .copyright {
     font-size: 0.9em;
-    color: #aaa;
+    color: var(--copyright-color);
     margin-bottom: 15px;
 }
 
@@ -274,28 +310,29 @@ footer a:hover {
 }
 
 .popup-content {
-    background-color: #1a1a1a;
+    background-color: var(--popup-bg);
     margin: 15% auto;
     padding: 30px;
-    border: 1px solid #555;
+    border: 1px solid var(--popup-border);
     width: 80%;
     max-width: 500px;
     max-height: 80vh; /* Set a maximum height relative to viewport height */
     overflow-y: auto; /* Enable vertical scrolling */
     border-radius: 10px;
     position: relative;
-    color: #f0f0f0;
+    color: var(--text-color);
     text-align: left;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
 }
 
 .popup-content h2 {
-    color: #007bff;
+    color: var(--title-color);
     margin-top: 0;
     margin-bottom: 20px;
 }
 
 .popup-content h3 {
-    color: #007bff;
+    color: var(--title-color);
     margin-top: 20px;
     margin-bottom: 10px;
 }
@@ -316,20 +353,36 @@ footer a:hover {
 }
 
 .close-button {
-    color: #aaa;
+    color: var(--copyright-color);
     float: right;
     font-size: 28px;
     font-weight: bold;
     position: absolute;
     top: 10px;
     right: 20px;
+    transition: color 0.3s;
 }
 
 .close-button:hover,
 .close-button:focus {
-    color: #f0f0f0;
+    color: var(--link-color);
     text-decoration: none;
     cursor: pointer;
+}
+
+#theme-toggle {
+    background-color: var(--link-color);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s;
+}
+
+#theme-toggle:hover {
+    background-color: var(--link-hover-color);
 }
 
 /* Responsive adjustments */
